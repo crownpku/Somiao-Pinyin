@@ -12,7 +12,8 @@ POQRS  TUV   WXYZ
 from __future__ import print_function
 from hyperparams import Hyperparams as hp
 import codecs
-import pickle
+#import pickle
+import json
 
 def build_vocab():
     """Builds vocabulary from the corpus.
@@ -23,7 +24,7 @@ def build_vocab():
 
     # pinyin
     if hp.isqwerty:
-        pnyns = u"EUabcdefghijklmnopqrstuvwxyz0123456789。，！？" #E: Empty, U: Unknown
+        pnyns = "EUabcdefghijklmnopqrstuvwxyz0123456789。，！？" #E: Empty, U: Unknown
         pnyn2idx = {pnyn:idx for idx, pnyn in enumerate(pnyns)}
         idx2pnyn = {idx:pnyn for idx, pnyn in enumerate(pnyns)}
     else:
@@ -45,9 +46,10 @@ def build_vocab():
     idx2hanzi = {idx:hanzi for idx, hanzi in enumerate(hanzis)}
     
     if hp.isqwerty:
-        pickle.dump((pnyn2idx, idx2pnyn, hanzi2idx, idx2hanzi), open('data/vocab.qwerty.pkl', 'wb'))
+        #pickle.dump((pnyn2idx, idx2pnyn, hanzi2idx, idx2hanzi), open('data/vocab.qwerty.pkl', 'wb'), 0)
+        json.dump((pnyn2idx, idx2pnyn, hanzi2idx, idx2hanzi), open('data/vocab.qwerty.json', 'w'))
     else:
-        pickle.dump((pnyn2idx, idx2pnyn, hanzi2idx, idx2hanzi), open('data/vocab.nine.pkl', 'wb'))
-
+        #pickle.dump((pnyn2idx, idx2pnyn, hanzi2idx, idx2hanzi), open('data/vocab.nine.pkl', 'wb'), 0)
+        json.dump((pnyn2idx, idx2pnyn, hanzi2idx, idx2hanzi), open('data/vocab.nine.json', 'w'))
 if __name__ == '__main__':
     build_vocab(); print("Done" )

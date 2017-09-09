@@ -39,7 +39,7 @@ def main_batches():
                     
                     preds = sess.run(g.preds, {g.x: x})
                     for n, xx, pred, expected in zip(num, x, preds, y): # sentence-wise
-                        got = "".join(idx2hanzi[idx] for idx in pred)[:np.count_nonzero(xx)].replace("_", "")
+                        got = "".join(idx2hanzi[str(idx)] for idx in pred)[:np.count_nonzero(xx)].replace("_", "")
                          
                         edit_distance = distance.levenshtein(expected, got)
                         total_edit_distance += edit_distance
@@ -71,7 +71,7 @@ def main():
                 x = load_test_string(pnyn2idx, line)
                 #print(x)
                 preds = sess.run(g.preds, {g.x: x})
-                got = "".join(idx2hanzi[idx] for idx in preds[0])[:np.count_nonzero(x[0])].replace("_", "")
+                got = "".join(idx2hanzi[str(idx)] for idx in preds[0])[:np.count_nonzero(x[0])].replace("_", "")
                 print(got)
 
                                                                                                    

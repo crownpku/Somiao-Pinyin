@@ -15,6 +15,8 @@ class Hyperparams:
     # training scheme
     lr = 0.0001
     logdir = "log/qwerty" if isqwerty  is True else "log/nine"
-    batch_size = 64
-    num_epochs = 20
+    #batch_size = 64
+    #num_epochs = 20
+    batch_size = 200
+    num_epochs = 30
     
