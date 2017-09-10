@@ -2,6 +2,7 @@
 
 # Soumiao Pinyin: Train your own Chinese Input Method with Seq2seq Model
 
+### [中文Blog](http://www.crownpku.com/2017/09/10/%E6%90%9C%E5%96%B5%E8%BE%93%E5%85%A5%E6%B3%95-%E7%94%A8seq2seq%E8%AE%AD%E7%BB%83%E8%87%AA%E5%B7%B1%E7%9A%84%E6%8B%BC%E9%9F%B3%E8%BE%93%E5%85%A5%E6%B3%95.html)
 
 Personalized Chinese Pinyin Input Method with Seq2seq model
 
@@ -9,6 +10,8 @@ Original code in https://github.com/Kyubyong/neural_chinese_transliterator for r
 
 This repository intends to experiment with different training data and interactive user inputs, and possibly develop towards a real data-personalized and model-localized Pinyin Input product.
 
+
+![](http://www.crownpku.com/images/201709/1.jpg)
 
 
 ## Requrements
