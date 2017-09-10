@@ -15,14 +15,14 @@ import codecs
 import numpy as np
 import re
 
-def load_vocab_pickle():
+def load_vocab():
     import pickle
     if hp.isqwerty:
         return pickle.load(open('data/vocab.qwerty.pkl', 'rb'))
     else:
         return pickle.load(open('data/vocab.nine.pkl', 'rb'))
 
-def load_vocab():
+def load_vocab_json():
     import json
     if hp.isqwerty:
         return json.load(open('data/vocab.qwerty.json', 'r'))
